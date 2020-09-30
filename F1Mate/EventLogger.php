@@ -4,7 +4,7 @@
  * Published by  : F1Mate
  * Publisher URL : https://f1mate.com
  * Contributors  : f1mate, 1amitgupta (Github)
- * Version       : v1.01
+ * Version       : v1.02
  * Licence       : MIT, Copyright (c) 2020 F1 Mate (f1mate)
  * Github URL    : https://github.com/f1mate/EventLogger
  */
@@ -31,7 +31,6 @@ class EventLogger
 
   private $type;
   private $path;
-  private $chmode;
 
   public function __construct()
   {
@@ -86,8 +85,8 @@ class EventLogger
 
     try {
       date_default_timezone_set(F1_TIMEZONE);
-      $this->mkdirF1Mate($this->path, $this->chmode);
-      $content = "DATE:: " . date('D d-M-Y') . " || TIME:: " . date('H:i:s') . " || IP:: " . trim($_SERVER['REMOTE_ADDR']) . " || " . $event_name . ":: " . $msg . "\r\n";
+      $this->mkdirF1Mate($this->path);
+      $content = "DATE:: " . date('D d-M-Y') . " || TIME:: " . date('H:i:s') . " || IP:: " . $this->remoteAddr() . " || " . $event_name . ":: " . $msg . "\r\n";
       $fp = fopen($this->getFileName($event_name), 'a');
       fwrite($fp, $content);
       return true;
@@ -102,10 +101,15 @@ class EventLogger
     return $this->path . "/" . $this->type . $event_name . '_log_' . date('Y_m_d') . '.log';
   }
 
-  private function mkdirF1Mate($path, $chmode = 0750)
+  private function mkdirF1Mate($path)
   {
     if (!is_dir($path)) {
       mkdir($path, 0750, true);
     }
+  }
+
+  private function remoteAddr()
+  {
+    return trim($_SERVER['REMOTE_ADDR']);
   }
 }
