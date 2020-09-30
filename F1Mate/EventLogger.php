@@ -5,7 +5,7 @@
  * Publisher URL : https://f1mate.com
  * Contributors  : f1mate, 1amitgupta (Github)
  * Version       : v1.01
- * Licence       : MIT
+ * Licence       : MIT, Copyright (c) 2020 F1 Mate (f1mate)
  * Github URL    : https://github.com/f1mate/EventLogger
  */
 
