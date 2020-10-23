@@ -4,7 +4,7 @@
  * Published by  : F1Mate
  * Publisher URL : https://f1mate.com
  * Contributors  : f1mate, 1amitgupta (Github)
- * Version       : v1.02
+ * Version       : v1.021
  * Licence       : MIT, Copyright (c) 2020 F1 Mate (f1mate)
  * Github URL    : https://github.com/f1mate/EventLogger
  */
@@ -36,7 +36,7 @@ class EventLogger
   {
     $this->type = '';
     $this->chmod = 0750;
-    $this->path = $_SERVER['DOCUMENT_ROOT'] . F1_LOG_PATH;
+    $this->path = trim($_SERVER['DOCUMENT_ROOT']) . F1_LOG_PATH;
   }
 
   public function success()
