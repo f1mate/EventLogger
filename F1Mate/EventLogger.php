@@ -4,15 +4,14 @@
  * Published by  : F1Mate
  * Publisher URL : https://f1mate.com
  * Contributors  : f1mate, 1amitgupta (Github)
- * Version       : v1.021
+ * Version       : v1.022
  * Licence       : MIT, Copyright (c) 2020 F1 Mate (f1mate)
  * Github URL    : https://github.com/f1mate/EventLogger
  */
 
 /**
  * Remove comments
- * When you are using any framework
- * i.e. Laravel
+ * When you are using Laravel framework
  */
 //namespace App\F1Mate;
 //use Exception;
