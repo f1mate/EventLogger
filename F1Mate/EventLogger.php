@@ -34,7 +34,6 @@ class EventLogger
   public function __construct()
   {
     $this->type = '';
-    $this->chmod = 0750;
     $this->path = trim($_SERVER['DOCUMENT_ROOT']) . F1_LOG_PATH;
   }
 
